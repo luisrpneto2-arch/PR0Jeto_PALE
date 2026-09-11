@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!--MENU-->
+    <nav class="menu">
+        <div class="logo">🕹️🎮 GAME4ALL</div>
+
+
+        <div class="links">
+            <a href="#inicio">Início</a>
+            <a href="#cardapio">Produtos</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#graficos">Gráficos</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </nav>
+
+
+    <!--BANNER-->
+    <section id="inicio" class="banner">
+        <div class="banner-conteudo">
+            <h1>GAME4ALL</h1>
+           <p id="sobre-texto">
+    Nosso Projeto tem como objetivo trazer inclusão para a acessibilidade digital em jogos.
+</p>
+
+<button id="btn-ouvir">
+    🔊 Ouvir texto
+</button>
+
+<script>
+    function falarTexto(texto) {
+        if ('speechSynthesis' in window) {
+            // Cancela áudios anteriores para não sobrepor ou travar
+            window.speechSynthesis.cancel();
+
+            const mensagem = new SpeechSynthesisUtterance(texto);
+            mensagem.lang = 'pt-BR';
+            mensagem.rate = 1.0; // Velocidade da voz (1.0 é o normal)
+
+            window.speechSynthesis.speak(mensagem);
+        } else {
+            alert("Seu navegador não suporta leitura em voz alta.");
+        }
+    }
+
+    // Adiciona a ação de clique no botão de forma segura
+    document.getElementById('btn-ouvir').addEventListener('click', function() {
+        const texto = document.getElementById('sobre-texto').innerText;
+        falarTexto(texto);
+    });
+</script>
+
+            <a href="#cardapio" class="btn">Ver Produtos</a>
+        </div>
+    </section>
+
+
+    <!--CARDÁPIO / PRODUTOS-->
+<section id="cardapio" class="cardapio">
+
+    <h2>Nossos Produtos</h2>
+
+    <div class="cards">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="controle.jfif" alt="Controle de jogo com suporte a comando de voz">
+            <h3>Controle</h3>
+            <p>Controle do jogo com funcionabilidade de Voz.</p>
+            <button class="btn-ouvir" onclick="falarCard(this)">
+                🔊 Ouvir texto
+            </button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="snake.jpg" alt="Interface do jogo da cobrinha 2D">
+            <h3>Jogo da Cobrinha</h3>
+            <p>Jogo 2D inspirado do jogo classico do google.</p>
+            <button class="btn-ouvir" onclick="falarCard(this)">
+                🔊 Ouvir texto
+            </button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="Manual.jpg" alt="Manual do jogo para compreender o jogo e suas regras.">
+            <h3>Manual</h3>
+            <p>Manual do jogo para entendimento do controle de voz e outras informações.</p>
+            <button class="btn-ouvir" onclick="falarCard(this)">
+                🔊 Ouvir texto
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!--GRÁFICOS-->
+        <section id="graficos" class="graficos">
+
+            <h2>Gráficos</h2>
+
+    <div class="fotos">
+
+        <!-- IMAGEM 1 -->
+        <div class="foto-card">
+            <img src="snake.jpg" alt="Ilustração no estilo pixel art do clássico jogo da cobrinha (Cobrinha), mostrando a cobra em blocos verdes sobre um fundo escuro quadriculado, acompanhada de um quadrado vermelho (alimento) e do texto 'Cobrinha'.">
+            <button class="btn-ouvir" onclick="falarImagem(this)">
+                🔊 Ouvir descrição
+            </button>
+        </div>
+
+        <!-- IMAGEM 2 -->
+        <div class="foto-card">
+            <img src="Voz.png" alt="Ilustração vetorial em fundo azul radial apresentando uma pessoa sorrindo enquanto fala próximo a um celular, com linhas de som saindo da sua boca e um ícone de microfone na tela, simbolizando o recurso de comando por voz.">
+            <button class="btn-ouvir" onclick="falarImagem(this)">
+                🔊 Ouvir descrição
+            </button>
+        </div>
+
+    </div>
+</section>
+
+
+    <!--SOBRE-->
+<section id="sobre" class="sobre">
+
+    <h2>Sobre o Projeto</h2>
+
+    <p>
+        O nosso projeto realizou estudos e percebemos que não existe ou é pouca acessibilidade em jogos digitais por isso pensamos em fazer um jogo na linguagem Python no mesmo estilo do jogo da cobrinha clássico com um controle de Voz para as pessoas com deficiência física.
+    </p>
+
+    <button class="btn-ouvir" onclick="falarSecao(this)">
+        🔊 Ouvir texto
+    </button>
+
+</section>
+
+
+    <!--GALERIA-->
+        <section id="galeria" class="galeria">
+
+            <h2>Galeria</h2>
+
+            <div class="fotos">
+                <img src="snake.jpg">
+                <img src="Voz.png">
+            </div>
+        </section>
+
+
+
+    <!-- CONTATO -->
+
+    <section id="contato" class="contato">
+
+        <h2>Entre em Contato</h2>
+
+        <form>
+
+            <input type="text" placeholder="Seu nome" required>
+
+            <input type="email" placeholder="E-mail" required>
+
+            <textarea rows="5" placeholder="Sua mensagem">
+        </textarea>
+
+            <button type="submit">
+                Enviar
+            </button>
+        </form>
+    </section>
+
+
+
+    <!--RODAPÉ-->
+
+    <footer>
+        <h3>🕹️🎮 GAME4ALL</h3>
+
+        <p>
+            📍 Rua Salvador Branco de Andrade, 182 - Jardim Sao Miguel, Taboão da Serra - SP - BRASIL
+        </p>
+
+        <p>
+            📞 (11) 98989-9321
+        </p>
+
+        <p>
+            ⏰ Terça a Domingo - 18h às 23h
+        </p>
+        <p>
+            © 2026 - Todos os direitos reservados
+        </p>
+
+    </footer>
+
+    <!--BOTÃO WHATSAPP-->
+
+    <a href="https://wa.me/5511999999999" class="whatsapp" target="_blank">
+
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+<script src="script.js"></script>
+    
+</body>
+
+</html>
